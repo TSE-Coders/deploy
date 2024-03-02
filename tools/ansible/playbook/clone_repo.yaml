@@ -1,0 +1,14 @@
+---
+- hosts: all
+  tasks:
+  - name: Install {{ component }}
+    ansible.builtin.git:
+      repo: "{{ repo }}"
+      dest: "/home/ubuntu/sandbox_repos/{{ component }}"
+      clone: yes
+      single_branch: yes
+      version: "{{ branch }}"
+    vars:
+      component: ""
+      repo: ""
+      branch: ""

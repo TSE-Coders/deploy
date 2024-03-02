@@ -1,0 +1,10 @@
+---
+- hosts: all
+  tasks:
+  - name: Copy Environment Variables
+    vars:
+      component: ""
+    ansible.builtin.copy:
+      src: ../../../environment_variables/{{ component }}.env
+      dest: /home/ubuntu/sandbox_repos/{{ component }}/env
+

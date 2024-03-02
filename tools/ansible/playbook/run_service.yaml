@@ -1,0 +1,13 @@
+---
+- hosts: all
+  become: true
+  vars:
+    repo_location: "" # Required Field
+
+  tasks:
+  - name: Move {{ repo_location }} Service File
+    command: cp /home/ubuntu/sandbox_repos/{{ repo_location }}/service /etc/systemd/system/{{ repo_location }}.service
+
+  - name: Run {{ repo_location }} Application
+    command: systemctl start {{ repo_location }}.service
+
