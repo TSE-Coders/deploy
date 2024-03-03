@@ -41,5 +41,5 @@ terraform.rc
 
 # Project specific 
 environment_variables/*.env
-tools/ssh/*
+tools/ssh/ec2*
 tools/ansible/inventory
