@@ -38,7 +38,8 @@ aws_access_key_id = <YOUR_ACCESS_KEY>
 aws_secret_access_key = <YOUR_SECRET_KEY>
 ```
 
-This will create an AWS profile called `datadog-admin` which we will be able to tell Terraform to use.
+This will create an AWS profile called `datadog-admin` which Terraform will use to interact with AWS.
+
 
 
 

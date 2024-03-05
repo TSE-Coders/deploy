@@ -9,14 +9,6 @@ resource "aws_instance" "instance" {
   security_groups = ["sg-0348948a9f025a14e"]
   subnet_id       = "subnet-b89e00e2"
 
-  # user_data = templatefile("./init.tpl", {
-  #   dd_api_key    = var.datadog_api_key
-  #   hostname      = var.hostname
-  #   frontend_repo = var.frontend
-  #   backend_repo  = var.backend
-  #   zendesk_repo  = var.zendesk
-  # })
-
   provisioner "remote-exec" {
     inline = ["echo Waiting until SSH is ready"]
 
