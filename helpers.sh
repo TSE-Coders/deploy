@@ -5,8 +5,8 @@ create_instance() {
     pushd tools/terraform > /dev/null
  
 
-    terraform init > /dev/null
-    terraform apply -auto-approve > /dev/null
+    terraform init
+    terraform apply -auto-approve
 
     EC2_IP=$(cat terraform.tfstate | jq -r ".outputs.ec2_ip.value")
 

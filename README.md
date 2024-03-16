@@ -30,6 +30,8 @@ sudo installer -pkg AWSCLIV2.pkg -target /
 
 ## Setup
 
+### AWS
+
 In order for Terraform to be able to create EC2's on your behalf, you will need to get an access and secret key. To do this you can follow [These Instructions](automated_deployment_test) from the EC2 Terraform Sandbox. Once you have your access and secret key, create a file in `~/.aws` called `credentials` and add the following text:
 
 ```
@@ -40,6 +42,11 @@ aws_secret_access_key = <YOUR_SECRET_KEY>
 
 This will create an AWS profile called `datadog-admin` which Terraform will use to interact with AWS.
 
+### Terraform
 
+In the `tools/terraform/variables.tf` files you can see that there is a variable called `hostname`, this is going to be the name of the EC2. The best way to provide the value for this is to create a `tools/terraform/terraform.tfvars` with the hostname you would like. Below is an example where I set the hostname to `sandbox-standardization`:
 
+``` terraform
+hostname = "sandbox-standardization"
+```
 

@@ -3,7 +3,10 @@ resource "aws_key_pair" "ec2_key" {
   public_key = file("../ssh/ec2.pub")
 }
 resource "aws_instance" "instance" {
-  ami             = "ami-00e472d270763aaa3" # Standardize Image based on Ubuntu 22.04 LTS (64-bit (x86))
+  # ami             = "ami-00e472d270763aaa3" # Standardize Image based on Ubuntu 22.04 LTS (64-bit (x86))
+
+  # Standardize Image based on Ubuntu 22.04 LTS (64-bit (x86)) Default Language Versions Installed
+  ami             = "ami-0141f0014370cc96d" 
   key_name        = aws_key_pair.ec2_key.key_name
   instance_type   = "t2.small"
   security_groups = ["sg-0348948a9f025a14e"]
