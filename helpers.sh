@@ -23,7 +23,11 @@ create_instance() {
 
 create_sshkey() {
     echo "Creating a temp ssh key for the EC2: In Progress..."
-    rm tools/ssh/*
+    if [ -d tools/ssh ]; then
+        echo "Deleting previous tools/ssh directory..."
+        rm -rf tools/ssh
+    fi
+    mkdir tools/ssh
     ssh-keygen -t ed25519 -f "tools/ssh/ec2" -N "" > /dev/null
     echo "Creating a temp ssh key for the EC2: Complete"
 }

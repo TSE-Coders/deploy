@@ -4,6 +4,9 @@ source helpers.sh
 
 set -e
 
+# disables the host key checking that ansible does when you try to connect to a new host
+export ANSIBLE_HOST_KEY_CHECKING=false
+
 # # # Script Variables # # #
 FRONTEND_REPO="https://github.com/TSE-Coders/pd-client-service.git"
 BACKEND_REPO="https://github.com/TSE-Coders/pd-users-api.git"
@@ -29,4 +32,6 @@ ansible-playbook playbook/run_service.yaml --extra-vars "repo_location=backend"
 ansible-playbook playbook/run_service.yaml --extra-vars "repo_location=frontend"
 popd > /dev/null
 echo "Running the Project Components: Complete"
+
+echo "Your sandbox has been deployed, you can check it out at http://$(cat tools/ansible/inventory):3389"
 
