@@ -88,3 +88,5 @@ REDIS_PASS=
 
 Now that you have finished setting up, you can deploy the sandbox. To do this you run the script `create_ec2.sh` and let it go. After it has completed, you will see a message stating the URL that the application can be reached from. Note that this is the Private IP Address of the EC2 which can only be accessed via a computer connected to Appgate. 
 
+Note that even though the script finished and all of the project components are deployed, they will need some time to be up and running so if you go to the URL given right away you will likely see a `Site Cannot be Reached Page`. The components should be ready after about 5 minutes of the script finishing.
+
